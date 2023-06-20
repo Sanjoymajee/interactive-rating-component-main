@@ -8,7 +8,10 @@ reviewButtonElement.addEventListener("click", (e) => {
   const selectedRatingElement = document.querySelector(
     'input[name="rate"]:checked'
   );
-  console.log(selectedRatingElement);
+  if (!selectedRatingElement) {
+    alert("Please select a rating");
+    return;
+  }
   rateCardElement.classList.remove("show_content");
   rateCardElement.classList.add("hide_content");
   thankYouCardElement.classList.remove("hide_content");
