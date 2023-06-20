@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+:root {
+  --Orange: hsl(25, 97%, 53%);
+
+  --White: hsl(0, 0%, 100%);
+  --Light-Grey: hsl(217, 12%, 63%);
+  --Medium-Grey: hsl(216, 12%, 54%);
+  --Dark-Blue: #1f2630;
+  --Very-Dark-Blue: hsl(216, 12%, 8%);
+  --light-Blue: hsl(213, 19%, 18%);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Very-Dark-Blue);
+  color: var(--White);
+  font-family: "Overpass", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.show_content {
+  opacity: 1;
+  z-index: 100;
+  transform: scale(1);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.hide_content {
+  opacity: 0;
+  z-index: -100;
+  transform: scale(0.8);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.rate_card {
+  display: grid;
+  grid-template-columns: 1fr 50fr 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+  background-color: var(--Very-Dark-Blue);
+  min-width: 349px;
+  max-width: 400px;
+}
+
+.card__content {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  background-color: var(--Dark-Blue);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
+
+.card_img {
+  background-color: var(--light-Blue);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.card_img img {
+  width: 15px;
+  height: 15px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: var(--Light-Grey);
+}
+
+.ratings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input[type="radio"] {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  margin: 0;
+  background-color: var(--light-Blue);
+  appearance: none;
+  -webkit-appearance: none; /*to disable the default appearance of radio button*/
+  -moz-appearance: none;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+input[type="radio"]:hover {
+  background-color: var(--Orange);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+input[type="radio"]:hover ~ span {
+  color: var(--White);
+  cursor: pointer;
+}
+
+input[type="radio"]:focus {
+  /*no need, if you don't disable default appearance*/
+  outline: none; /*to remove the square border on focus*/
+}
+
+input[type="radio"]:checked {
+  /*no need, if you don't disable default appearance*/
+  background-color: var(--Medium-Grey);
+}
+
+input[type="radio"]:checked ~ span:first-of-type {
+  color: white;
+}
+
+label span:first-of-type {
+  position: relative;
+  left: -28px;
+  top: -14px;
+  font-size: 15px;
+  color: var(--Medium-Grey);
+}
+
+label span {
+  position: relative;
+  top: -12px;
+}
+
+button {
+  background-color: var(--Orange);
+  color: var(--White);
+  border: none;
+  border-radius: 1.15rem;
+  padding: 0.5rem 1rem;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  height: 40px;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+button:hover {
+  background-color: var(--White);
+  color: var(--Orange);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.thank_you_card {
+  position: absolute;
+  background-color: var(--Dark-Blue);
+  min-width: 349px;
+  max-width: 400px;
+  border-radius: 1rem;
+}
+
+.thank_you_card .card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.show_rating {
+  background-color: var(--light-Blue);
+  height: 25px;
+  width: auto;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.show_rating p {
+  margin: 0;
+  color: var(--Orange);
+}
+
+.attribution {
+  color: white;
+  font-size: 0.8rem;
+}
