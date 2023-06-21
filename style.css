@@ -70,7 +70,7 @@ body {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -88,68 +88,17 @@ p {
   justify-content: space-between;
 }
 
-input[type="radio"] {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  margin: 0;
-  background-color: var(--light-Blue);
-  appearance: none;
-  -webkit-appearance: none; /*to disable the default appearance of radio button*/
-  -moz-appearance: none;
-  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-input[type="radio"]:hover {
-  background-color: var(--Orange);
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-input[type="radio"]:hover ~ span {
-  color: var(--White);
-  cursor: pointer;
-}
-
-input[type="radio"]:focus {
-  /*no need, if you don't disable default appearance*/
-  outline: none; /*to remove the square border on focus*/
-}
-
-input[type="radio"]:checked {
-  /*no need, if you don't disable default appearance*/
-  background-color: var(--Medium-Grey);
-}
-
-input[type="radio"]:checked ~ span:first-of-type {
-  color: white;
-}
-
-label span:first-of-type {
-  position: relative;
-  left: -28px;
-  top: -14px;
-  font-size: 15px;
-  color: var(--Medium-Grey);
-}
-
-label span {
-  position: relative;
-  top: -12px;
-}
-
 button {
   background-color: var(--Orange);
   color: var(--White);
   border: none;
-  border-radius: 1.15rem;
+  border-radius: 1.25rem;
   padding: 0.5rem 1rem;
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
   width: 100%;
-  height: 40px;
+  height: 45px;
   margin-top: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -162,12 +111,33 @@ button:hover {
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+.ratings button {
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  background-color: var(--light-Blue);
+  color: var(--Light-Grey);
+}
+
+.ratings button:hover {
+  background-color: var(--Orange);
+  color: var(--White);
+}
+
+.ratings button:focus {
+  background-color: var(--Medium-Grey);
+  color: var(--White);
+}
+
 .thank_you_card {
   position: absolute;
   background-color: var(--Dark-Blue);
   min-width: 349px;
   max-width: 400px;
   border-radius: 1rem;
+  text-align: center;
 }
 
 .thank_you_card .card__content {
